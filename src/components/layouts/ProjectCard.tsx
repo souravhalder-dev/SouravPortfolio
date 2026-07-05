@@ -15,6 +15,7 @@ import {
   Server,
   Layers,
   CheckCircle2,
+  Eye,
 } from "lucide-react";
 import { Badge } from "../ui/badge";
 import { FaGithub } from "react-icons/fa";
@@ -27,6 +28,17 @@ export default function ProjectCard({ project }: { project: Project }) {
       <div className="relative">
         {/* Top ambient hover accent line slide transition */}
         <div className="absolute top-0 left-0 w-full h-0.5 bg-linear-to-r from-transparent via-primary/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+
+        {/* Project Image */}
+        {project.images.length > 0 && (
+          <div className="h-48 overflow-hidden">
+            <img
+              src={project.images[0]}
+              alt={project.title}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+          </div>
+        )}
 
         <CardHeader className="space-y-3">
           <CardTitle className="text-xl font-bold flex items-center justify-between tracking-tight group-hover:text-primary transition-colors duration-200">
@@ -87,8 +99,20 @@ export default function ProjectCard({ project }: { project: Project }) {
 
       {/* DYNAMIC CARD BOTTOM ACTIONS MATRIX INTERFACE */}
       <div className="space-y-2 p-4 pt-0">
+        {/* View More Button */}
+        <Button
+          variant="default"
+          className="w-full h-9 gap-2 shadow-xs shadow-primary/10 font-medium"
+          asChild
+        >
+          <Link href={`/projects/${project.id}`}>
+            <Eye className="w-4 h-4" />
+            <span>View More / Details</span>
+          </Link>
+        </Button>
+
         {/* GITHUB INFO BANNER FOOTER INLAY */}
-        <div className="rounded-xl border border-dashed border-border bg-muted/20 p-3 mt-4 flex items-start gap-2.5 transition-colors group-hover:bg-muted/40 group-hover:border-primary/20">
+        <div className="rounded-xl border border-dashed border-border bg-muted/20 p-3 flex items-start gap-2.5 transition-colors group-hover:bg-muted/40 group-hover:border-primary/20">
           <FaGithub className="w-4 h-4 text-muted-foreground shrink-0 mt-0.5 group-hover:text-primary transition-colors" />
           <div className="space-y-0.5">
             <p className="text-[11px] font-semibold text-foreground tracking-tight">

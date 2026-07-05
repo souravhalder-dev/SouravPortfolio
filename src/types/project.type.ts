@@ -18,4 +18,6 @@ export type Project = {
   updatedAt: Date;
   technologies?: ProjectTechnology[];
   feedbacks?: Feedback[];
+  challenges: string[];
+  futurePlans: string[];
 };

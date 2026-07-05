@@ -1,17 +1,9 @@
 import { Terminal } from "lucide-react";
-import { getProjects } from "@/actions/project.action";
-import { Project } from "@/types";
+import { PROJECTS } from "@/constants/projects";
 import ProjectCard from "./ProjectCard";
 
-export default async function ProjectSection() {
-  const response = await getProjects({
-    page: "1",
-    limit: "6",
-  });
-
-  const liveProjects: Project[] = (response?.data || []).filter(
-    (project: Project) => !project.isDeleted,
-  );
+export default function ProjectSection() {
+  const liveProjects = PROJECTS.filter((project) => !project.isDeleted);
 
   return (
     <section
