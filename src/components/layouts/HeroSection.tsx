@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
-import { Terminal, CheckCircle2, FileText, Download } from "lucide-react";
+import { Terminal, CheckCircle2, FileText, Download, Phone } from "lucide-react";
 import { TypingEffect } from "./TypingEffect";
 import { FaGithub, FaLinkedin, FaWhatsapp, FaFacebook } from "react-icons/fa";
 import { CiMail } from "react-icons/ci";
@@ -88,20 +88,36 @@ export default function HeroSection() {
           {/* Contact Details & Actions Container */}
           <div className="space-y-4">
             {/* Direct Contact Metrics */}
-            <div className="space-y-2 font-mono text-sm text-muted-foreground/90 bg-muted/20 border border-border/40 p-3.5 rounded-xl w-fit backdrop-blur-xs">
-              <div className="flex items-center gap-2.5">
-                <CiMail className="w-4 h-4 text-primary shrink-0" />
-                <span>Email:</span>
+            <div className="space-y-2 font-mono text-sm text-muted-foreground/90 bg-muted/20 border border-border/40 p-3.5 rounded-xl w-full backdrop-blur-xs">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+                <div className="flex items-center gap-2.5">
+                  <CiMail className="w-4 h-4 text-primary shrink-0" />
+                  <span>Email:</span>
+                </div>
                 <a
                   href="mailto:skhsouravhalder@gmail.com"
-                  className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
+                  className="text-foreground hover:text-primary transition-colors duration-200 font-medium break-all"
                 >
                   skhsouravhalder@gmail.com
                 </a>
               </div>
-              <div className="flex items-center gap-2.5">
-                <FaWhatsapp className="w-4 h-4 text-emerald-500 shrink-0" />
-                <span>WhatsApp:</span>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+                <div className="flex items-center gap-2.5">
+                  <Phone className="w-4 h-4 text-primary shrink-0" />
+                  <span>Phone:</span>
+                </div>
+                <a
+                  href="tel:+8801519603043"
+                  className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
+                >
+                  +880 15196 03043
+                </a>
+              </div>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+                <div className="flex items-center gap-2.5">
+                  <FaWhatsapp className="w-4 h-4 text-emerald-500 shrink-0" />
+                  <span>WhatsApp:</span>
+                </div>
                 <a
                   href="https://wa.me/8801519603043"
                   target="_blank"
@@ -111,7 +127,7 @@ export default function HeroSection() {
                   +880 15196 03043
                 </a>
               </div>
-              <div>
+              <div className="pt-2 flex items-center gap-3">
                 {/* GitHub Icon Button */}
                 <Button
                   asChild
@@ -145,14 +161,6 @@ export default function HeroSection() {
                     <FaLinkedin className="w-5 h-5 text-muted-foreground transition-colors group-hover/ln:text-[#0A66C2]" />
                   </Link>
                 </Button>
-
-                {/* Facebook Icon Button */}
-                <Button
-                  asChild
-                  variant="ghost"
-                  size="icon"
-                  className="cursor-pointer transition-all duration-300 hover:-translate-y-0.5 hover:bg-blue-600/10 rounded-xl group/fb"
-                ></Button>
               </div>
             </div>
 
