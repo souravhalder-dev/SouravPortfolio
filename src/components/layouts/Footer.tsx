@@ -15,7 +15,7 @@ export default function Footer() {
         {/* LOGO / BRAND MARK */}
         <div className="flex items-center gap-2 font-mono text-sm tracking-tight text-foreground/90 group">
           <Terminal className="w-4 h-4 text-primary transition-transform duration-300 group-hover:rotate-6" />
-          <span className="font-bold">Dev</span>
+          <span className="font-bold">Sourav</span>
           <span className="text-muted-foreground">.portfolio</span>
         </div>
 
@@ -28,7 +28,7 @@ export default function Footer() {
         {/* SOCIAL LINKS ARCHITECTURE */}
         <div className="flex items-center gap-4">
           <Link
-            href="https://github.com/"
+            href="https://github.com/souravhalder-dev"
             target="_blank"
             rel="noreferrer"
             className="p-2 rounded-md border border-border/60 bg-muted/20 text-muted-foreground hover:text-foreground hover:border-border hover:bg-muted/50 transition-all duration-200"
@@ -37,7 +37,7 @@ export default function Footer() {
             <FaGithub className="w-4 h-4" />
           </Link>
           <Link
-            href="https://www.linkedin.com/"
+            href="https://www.linkedin.com/in/sourav-halder-dev/"
             target="_blank"
             rel="noreferrer"
             className="p-2 rounded-md border border-border/60 bg-muted/20 text-muted-foreground hover:text-primary hover:border-primary/20 hover:bg-primary/5 transition-all duration-200"

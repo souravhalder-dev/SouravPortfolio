@@ -9,8 +9,8 @@ import { CiMail } from "react-icons/ci";
 
 export default function HeroSection() {
   const RESUME_VIEW_URL =
-    "https://drive.google.com/file/d/1mrI8fDyX6nRfZDkieumQoKlPWMefxs5k/view";
-  const RESUME_DOWNLOAD_PATH = "/resume.pdf";
+    "https://drive.google.com/file/d/1mrI8fDyX6nRfZDkieumQoK/view";
+  const RESUME_DOWNLOAD_PATH = "/resumo.pdf";
 
   return (
     <section
@@ -78,9 +78,10 @@ export default function HeroSection() {
             </div>
 
             <p className="text-lg md:text-xl text-muted-foreground font-normal leading-relaxed max-w-2xl pt-2">
-              Specializing in building robust, secure backends with Node.js,
-              Express.js, TypeScript, PostgreSQL and Prisma, paired with clean
-              and highly responsive frontend interfaces.
+              Specializing in developing secure, scalable backend architectures
+              using Node.js, Express.js, TypeScript, PostgreSQL, and Prisma,
+              while crafting clean, intuitive, and high-performance frontend
+              experiences.
             </p>
           </div>
 
@@ -102,12 +103,12 @@ export default function HeroSection() {
                 <FaWhatsapp className="w-4 h-4 text-emerald-500 shrink-0" />
                 <span>WhatsApp:</span>
                 <a
-                  href="https://wa.me/8801704210835"
+                  href="https://wa.me/8801519603043"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-foreground hover:text-emerald-500 transition-colors duration-200 font-medium"
                 >
-                  +880 17042 10835
+                  +880 15196 03043
                 </a>
               </div>
               <div>
@@ -119,7 +120,7 @@ export default function HeroSection() {
                   className="cursor-pointer transition-all duration-300 hover:-translate-y-0.5 hover:bg-muted/80 rounded-xl"
                 >
                   <Link
-                    href="https://github.com/"
+                    href="https://github.com/souravhalder-dev"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="GitHub Profile"
@@ -136,7 +137,7 @@ export default function HeroSection() {
                   className="cursor-pointer transition-all duration-300 hover:-translate-y-0.5 hover:bg-blue-500/10 rounded-xl group/ln"
                 >
                   <Link
-                    href="https://www.linkedin.com/in/captain-kanak"
+                    href="https://www.linkedin.com/in/sourav-halder-dev/"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="LinkedIn Profile"
@@ -151,16 +152,7 @@ export default function HeroSection() {
                   variant="ghost"
                   size="icon"
                   className="cursor-pointer transition-all duration-300 hover:-translate-y-0.5 hover:bg-blue-600/10 rounded-xl group/fb"
-                >
-                  <Link
-                    href="https://www.facebook.com/captainkanak"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Facebook Profile"
-                  >
-                    <FaFacebook className="w-5 h-5 text-muted-foreground transition-colors group-hover/fb:text-[#1877F2]" />
-                  </Link>
-                </Button>
+                ></Button>
               </div>
             </div>
 

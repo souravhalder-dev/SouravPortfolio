@@ -5,6 +5,7 @@ import {
   Card,
   CardContent,
   CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
 } from "../ui/card";
@@ -24,70 +25,73 @@ import { FeedbackButton } from "./FeedbackButton";
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <Card className="group flex flex-col justify-between overflow-hidden border-border/60 bg-card/40 backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/30 hover:shadow-2xl hover:shadow-primary/5">
+    <Card className="group flex flex-col h-full overflow-hidden border-border/30 bg-gradient-to-br from-card/90 to-card/70 backdrop-blur-xl shadow-xl shadow-black/5 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 hover:-translate-y-2">
       <div className="relative">
-        {/* Top ambient hover accent line slide transition */}
-        <div className="absolute top-0 left-0 w-full h-0.5 bg-linear-to-r from-transparent via-primary/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-
-        {/* Project Image */}
+        {/* Project Image with Overlay */}
         {project.images.length > 0 && (
-          <div className="h-48 overflow-hidden">
+          <div className="relative h-56 overflow-hidden">
             <img
               src={project.images[0]}
               alt={project.title}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           </div>
         )}
 
-        <CardHeader className="space-y-3">
-          <CardTitle className="text-xl font-bold flex items-center justify-between tracking-tight group-hover:text-primary transition-colors duration-200">
-            {project.title}
+        <CardHeader className="space-y-4 pt-6 pb-4">
+          <div className="flex items-center justify-between">
+            <CardTitle className="text-2xl font-bold tracking-tight bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent group-hover:from-primary group-hover:to-primary/80 transition-all duration-300">
+              {project.title}
+            </CardTitle>
             <Link
               href={project.liveUrl}
               target="_blank"
               rel="noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors p-1"
+              className="text-muted-foreground hover:text-primary transition-colors p-2 rounded-lg hover:bg-primary/10"
             >
-              <ArrowUpRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <ArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
-          </CardTitle>
-          <CardDescription className="text-sm text-muted-foreground line-clamp-2 leading-relaxed min-h-10">
+          </div>
+          <CardDescription className="text-base text-muted-foreground leading-relaxed">
             {project.description}
           </CardDescription>
         </CardHeader>
 
-        <CardContent className="space-y-5">
-          {/* DYNAMIC SYSTEM FEATURES SUB-SECTION */}
+        <CardContent className="space-y-6 pb-4">
+          {/* Features */}
           {project.features && project.features.length > 0 && (
-            <div className="space-y-2">
-              <span className="text-[11px] font-mono tracking-wider uppercase text-muted-foreground/80 flex items-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-primary/70" /> Core
-                Capabilities
-              </span>
-              <ul className="grid grid-cols-2 gap-x-2 gap-y-1.5 text-xs text-foreground/80 font-medium">
+            <div className="space-y-3">
+              <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground uppercase tracking-wider">
+                <CheckCircle2 className="w-4 h-4 text-primary" />
+                <span>Key Features</span>
+              </div>
+              <ul className="grid grid-cols-2 gap-2">
                 {project.features.slice(0, 4).map((feat, idx) => (
-                  <li key={idx} className="truncate flex items-center gap-1">
-                    <span className="w-1 h-1 rounded-full bg-primary/60 shrink-0" />
-                    {feat}
+                  <li
+                    key={idx}
+                    className="flex items-center gap-2 text-sm text-foreground/80 bg-muted/30 px-3 py-2 rounded-lg border border-border/20"
+                  >
+                    <span className="w-2 h-2 rounded-full bg-primary shrink-0" />
+                    <span className="truncate">{feat}</span>
                   </li>
                 ))}
               </ul>
             </div>
           )}
 
-          {/* TECHNOLOGY BADGES WRAP ROW */}
-          <div className="space-y-2">
-            <div className="flex items-center gap-1.5 text-[11px] font-mono tracking-wider uppercase text-muted-foreground/80">
-              <Layers className="w-3.5 h-3.5 text-primary/70" /> Integrated Tech
-              Stack
+          {/* Technologies */}
+          <div className="space-y-3">
+            <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground uppercase tracking-wider">
+              <Layers className="w-4 h-4 text-primary" />
+              <span>Technologies</span>
             </div>
-            <div className="flex flex-wrap gap-1.5">
+            <div className="flex flex-wrap gap-2">
               {project.technologies?.map((tech) => (
                 <Badge
                   key={tech.id}
-                  variant="outline"
-                  className="bg-muted/30 font-mono text-[10px] font-medium tracking-wide border-border/80 px-2 py-0.5 text-muted-foreground/90 hover:border-primary/30 hover:text-foreground transition-all cursor-default"
+                  variant="secondary"
+                  className="px-3 py-1 text-xs font-medium bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 transition-colors"
                 >
                   {tech.technology?.name}
                 </Badge>
@@ -97,76 +101,58 @@ export default function ProjectCard({ project }: { project: Project }) {
         </CardContent>
       </div>
 
-      {/* DYNAMIC CARD BOTTOM ACTIONS MATRIX INTERFACE */}
-      <div className="space-y-2 p-4 pt-0">
+      <CardFooter className="flex flex-col gap-3 pt-0 pb-6">
         {/* View More Button */}
         <Button
           variant="default"
-          className="w-full h-9 gap-2 shadow-xs shadow-primary/10 font-medium"
+          className="w-full h-10 gap-2 text-base font-medium shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all"
           asChild
         >
           <Link href={`/projects/${project.id}`}>
-            <Eye className="w-4 h-4" />
-            <span>View More / Details</span>
+            <Eye className="w-5 h-5" />
+            <span>View Project Details</span>
           </Link>
         </Button>
 
-        {/* GITHUB INFO BANNER FOOTER INLAY */}
-        <div className="rounded-xl border border-dashed border-border bg-muted/20 p-3 flex items-start gap-2.5 transition-colors group-hover:bg-muted/40 group-hover:border-primary/20">
-          <FaGithub className="w-4 h-4 text-muted-foreground shrink-0 mt-0.5 group-hover:text-primary transition-colors" />
-          <div className="space-y-0.5">
-            <p className="text-[11px] font-semibold text-foreground tracking-tight">
-              Detailed Technical Docs Available
-            </p>
-            <p className="text-[10px] text-muted-foreground leading-normal">
-              Review systemic architectural blueprints, structural parameters,
-              and ERD mockups natively inside the repos below.
-            </p>
-          </div>
-        </div>
-
-        {/* PRIMARY ARCHITECTURAL CONTROL ACTION ROW */}
-        <div className="grid grid-cols-3 gap-2 border-t border-border/40 pt-3 text-xs">
+        {/* Quick Links */}
+        <div className="grid grid-cols-2 gap-3 w-full">
           <Button
-            size="sm"
-            variant="default"
-            className="w-full h-8 px-2 gap-1 shadow-xs shadow-primary/10 font-medium"
-            asChild
-          >
-            <Link href={project.liveUrl} target="_blank" rel="noreferrer">
-              <ExternalLink className="w-3.5 h-3.5" />
-              <span>Live App</span>
-            </Link>
-          </Button>
-
-          <Button
-            size="sm"
             variant="outline"
-            className="w-full h-8 px-2 gap-1 bg-background/40 hover:bg-background/80 font-medium transition-all"
+            className="h-9 gap-2 text-sm font-medium border-border/30 hover:border-primary/30 hover:bg-primary/5"
             asChild
           >
             <Link href={project.frontendUrl} target="_blank" rel="noreferrer">
-              <Code2 className="w-3.5 h-3.5 text-sky-400" />
-              <span>UI Code</span>
+              <Code2 className="w-4 h-4" />
+              <span>Client Code</span>
             </Link>
           </Button>
-
           <Button
-            size="sm"
             variant="outline"
-            className="w-full h-8 px-2 gap-1 bg-background/40 hover:bg-background/80 font-medium transition-all"
+            className="h-9 gap-2 text-sm font-medium border-border/30 hover:border-primary/30 hover:bg-primary/5"
             asChild
           >
             <Link href={project.backendUrl} target="_blank" rel="noreferrer">
-              <Server className="w-3.5 h-3.5 text-emerald-400" />
+              <Server className="w-4 h-4" />
               <span>API Code</span>
             </Link>
           </Button>
         </div>
 
-        {/* LIVE MODAL INTERACTIVE FEEDBACK TRIGGER ROW */}
+        {/* Live Demo */}
+        <Button
+          variant="secondary"
+          className="w-full h-9 gap-2 text-sm font-medium bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/20"
+          asChild
+        >
+          <Link href={project.liveUrl} target="_blank" rel="noreferrer">
+            <ExternalLink className="w-4 h-4" />
+            <span>Live Demo</span>
+          </Link>
+        </Button>
+
+        {/* Feedback Button */}
         <FeedbackButton projectId={project.id} projectTitle={project.title} />
-      </div>
+      </CardFooter>
     </Card>
   );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { Terminal, Sparkles, Clock, Heart } from "lucide-react";
+import { Terminal, Sparkles, Clock, Heart, GraduationCap } from "lucide-react";
 
 export default function AboutSection() {
   return (
@@ -42,12 +42,12 @@ export default function AboutSection() {
           </p>
 
           <p>
-            What started as late nights of self-study and experimentation has evolved into a robust skill set in both front-end and back-end development. 
+            What started as late nights of self-study and experimentation has evolved into a robust skill set in both front-end and back-end development.
             I specialize in crafting elegant solutions, from intuitive user interfaces with modern JavaScript frameworks to robust server-side logic and database management.
           </p>
 
           <p>
-            I thrive on overcoming technical challenges and continuously refining my craft to deliver high-quality, maintainable code. 
+            I thrive on overcoming technical challenges and continuously refining my craft to deliver high-quality, maintainable code.
             Beyond the code, I believe in continuous learning and the power of strategic thinking.
           </p>
 
@@ -57,6 +57,22 @@ export default function AboutSection() {
               My hobbies like chess and cricket not only offer a mental reset but also hone my problem-solving skills, patience, and team collaboration—qualities I integrate into every project I work on.
             </span>
           </p>
+
+          {/* EDUCATION */}
+          <div className="mt-8 pt-6 border-t border-border/50">
+            <h3 className="text-2xl font-bold text-foreground mb-4 flex items-center gap-2">
+              <GraduationCap className="w-6 h-6 text-primary" />
+              Education
+            </h3>
+            <div className="bg-muted/30 p-4 rounded-xl border border-border/40">
+              <p className="text-lg font-semibold text-foreground">
+                Bachelor of Business Administration (BBA) in Management
+              </p>
+              <p className="text-muted-foreground">
+                National University
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
