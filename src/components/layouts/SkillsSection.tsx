@@ -10,6 +10,7 @@ import {
   Wrench,
   Brain,
   Users,
+  BookOpen,
   ChevronRight,
 } from "lucide-react";
 
@@ -43,6 +44,11 @@ const visualConfigMap: Record<string, GroupVisualConfig> = {
     icon: <Server className="w-6 h-6" />,
     gradient: "from-emerald-500 to-teal-500",
     glow: "rgba(16, 185, 129, 0.3)",
+  },
+  "CMS & Knowledge Engines": {
+    icon: <BookOpen className="w-6 h-6" />,
+    gradient: "from-teal-500 via-cyan-500 to-blue-600",
+    glow: "rgba(20, 184, 166, 0.3)",
   },
   "Database & ORM": {
     icon: <Database className="w-6 h-6" />,
@@ -82,6 +88,7 @@ const SKILL_GROUPS: SkillGroup[] = [
     skills: [
       { name: "JavaScript (ES6+)" },
       { name: "TypeScript" },
+      { name: "PHP" },
       { name: "SQL" },
     ],
   },
@@ -115,11 +122,25 @@ const SKILL_GROUPS: SkillGroup[] = [
     ],
   },
   {
+    title: "CMS & Knowledge Engines",
+    skills: [
+      { name: "WordPress" },
+      { name: "MediaWiki" },
+      { name: "Wiki Markup & Syntax" },
+      { name: "Semantic MediaWiki" },
+      { name: "Content Architecture" },
+      { name: "Custom Themes & Extensions" },
+      { name: "LiteSpeed & Caching Optimization" },
+      { name: "SEO & Digital Publishing" },
+    ],
+  },
+  {
     title: "Database & ORM",
     skills: [
       { name: "PostgreSQL" },
       { name: "Prisma ORM" },
       { name: "MongoDB" },
+      { name: "MySQL / MariaDB" },
       { name: "SQL Database Design" },
       { name: "Database Normalization" },
       { name: "ERD Design" },
@@ -201,11 +222,11 @@ export default function SkillsSection() {
           <Terminal className="w-5 h-5" />
           <span>02. Technical Skills</span>
         </div>
-        <h2 className="text-4xl font-extrabold tracking-tight sm:text-5xl bg-linear-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent">
+        <h2 className="text-4xl font-extrabold tracking-tight sm:text-5xl bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent">
           Technology Stack
         </h2>
         <p className="text-muted-foreground max-w-2xl mx-auto text-base sm:text-lg">
-          A comprehensive showcase of my technical expertise across various domains and technologies.
+          A comprehensive showcase of my technical expertise across full-stack engineering, CMS architectures, and knowledge engines.
         </p>
       </div>
 
@@ -221,18 +242,13 @@ export default function SkillsSection() {
           return (
             <div
               key={group.title}
-              className="group relative flex flex-col justify-between p-8 rounded-3xl border border-border/60 bg-card/40 backdrop-blur-xl shadow-lg transition-all duration-700 hover:-translate-y-4 hover:border-transparent hover:shadow-2xl dark:hover:bg-muted/20"
-              style={{
-                animationDelay: `${index * 120}ms`,
-                animation: 'fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-                opacity: 0,
-              }}
+              className="group relative flex flex-col justify-between p-8 rounded-3xl border border-border/60 bg-card/40 backdrop-blur-xl shadow-lg transition-all duration-700 hover:-translate-y-3 hover:border-transparent hover:shadow-2xl dark:hover:bg-muted/20"
             >
               {/* Gradient border overlay */}
               <div className="absolute inset-0 rounded-3xl p-[1px] bg-gradient-to-r from-transparent via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-              
+
               {/* Glow effect */}
-              <div 
+              <div
                 className="absolute -inset-2 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none blur-2xl"
                 style={{
                   background: visual.glow,
@@ -248,7 +264,9 @@ export default function SkillsSection() {
                       background: `linear-gradient(135deg, ${visual.glow}, transparent)`,
                     }}
                   >
-                    <div className={`text-white bg-gradient-to-br ${visual.gradient} p-2 rounded-xl`}>
+                    <div
+                      className={`text-white bg-gradient-to-br ${visual.gradient} p-2 rounded-xl`}
+                    >
                       {visual.icon}
                     </div>
                   </div>
@@ -259,17 +277,17 @@ export default function SkillsSection() {
 
                 {/* Badges Layout Wrap Flow Row */}
                 <div className="flex flex-wrap gap-2.5 pt-2">
-                  {group.skills.map((skill, skillIndex) => (
+                  {group.skills.map((skill) => (
                     <div
                       key={`${group.title}-${skill.name}`}
                       className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium border border-border/60 bg-muted/40 text-muted-foreground transition-all duration-400 hover:border-transparent hover:bg-gradient-to-r hover:from-primary/10 hover:to-purple-500/10 hover:text-foreground cursor-default group/skill"
-                      style={{
-                        animationDelay: `${(index * group.skills.length + skillIndex) * 40}ms`,
-                      }}
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r opacity-0 group-hover/skill:opacity-100 transition-opacity duration-300" style={{
-                        background: `linear-gradient(to right, ${visual.glow}, transparent)`,
-                      }} />
+                      <span
+                        className="w-1.5 h-1.5 rounded-full bg-gradient-to-r opacity-0 group-hover/skill:opacity-100 transition-opacity duration-300"
+                        style={{
+                          background: `linear-gradient(to right, ${visual.glow}, transparent)`,
+                        }}
+                      />
                       <span>{skill.name}</span>
                       <ChevronRight className="w-3.5 h-3.5 opacity-0 group-hover/skill:opacity-100 group-hover/skill:translate-x-0.5 transition-all duration-300" />
                     </div>

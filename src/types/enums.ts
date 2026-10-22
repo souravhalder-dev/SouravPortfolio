@@ -13,6 +13,7 @@ export enum TechnologyType {
   MOBILE = "MOBILE",
   AI = "AI",
   SYSTEM = "SYSTEM",
+  CMS = "CMS",
 }
 
 export enum UserStatus {

@@ -24,6 +24,10 @@ export const SKILL_GROUPS: GroupMeta[] = [
     ],
   },
   {
+    title: "CMS & Knowledge Engines",
+    types: [TechnologyType.CMS, TechnologyType.SYSTEM],
+  },
+  {
     title: "Data & Systems",
     types: [TechnologyType.DATABASE, TechnologyType.SYSTEM],
   },

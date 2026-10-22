@@ -26,6 +26,7 @@ const EXPERIENCES: ExperienceItem[] = [
       "Engineered TradeSphere, an enterprise multi-vendor B2B/B2C marketplace featuring RFQ tender counteroffers, Trade Assurance escrow, and a balanced double-entry financial ledger.",
       "Developed Remontada Workspace, a precision catalog web app built on Next.js 16 and Tailwind CSS v4 featuring real-time multi-field search and Firebase Authentication.",
       "Built EventPulse, a global tech summit discovery and ticket reservation platform integrating MongoDB Atlas, JWT authentication, and interactive Recharts data visualization.",
+      "Architected and maintained high-traffic CMS & MediaWiki knowledge engines including Justapedia, PlatyWiki, Soutar36, and NewsNut with custom caching and structured metadata schemas.",
     ],
     skills: [
       "Next.js",
@@ -35,23 +36,35 @@ const EXPERIENCES: ExperienceItem[] = [
       "PostgreSQL",
       "Prisma ORM",
       "MongoDB",
+      "MediaWiki",
+      "WordPress",
       "Tailwind CSS",
     ],
   },
   {
-    role: "Frontend Engineer",
+    role: "Frontend Engineer & CMS Specialist",
     company: "Client & Web Solutions",
     location: "Remote",
     period: "2021 - 2023",
     type: "Freelance",
     description:
-      "Crafted high-performance, mobile-first responsive web applications, interactive dashboards, and client-facing interfaces with state management and API integrations.",
+      "Crafted high-performance, mobile-first responsive web applications, interactive dashboards, and content management solutions with state management and API integrations.",
     achievements: [
       "Designed reusable UI component systems with Tailwind CSS, Lucide Icons, and accessible Radix UI primitives.",
-      "Integrated RESTful API endpoints and real-time state with TanStack Query and Axios, reducing client render latency.",
+      "Customized WordPress publishing workflows, Gutenberg blocks, and LiteSpeed server cache configurations for digital media outlets.",
+      "Configured MediaWiki extensions, infobox templates, and category taxonomies for collaborative knowledge bases.",
       "Maintained 100% responsiveness and cross-browser consistency across mobile, tablet, and desktop devices.",
     ],
-    skills: ["React", "JavaScript", "HTML5", "CSS3 / Tailwind", "REST APIs", "Git"],
+    skills: [
+      "React",
+      "JavaScript",
+      "WordPress",
+      "MediaWiki",
+      "HTML5",
+      "CSS3 / Tailwind",
+      "REST APIs",
+      "Git",
+    ],
   },
   {
     role: "Web Developer & Interface Designer",
@@ -60,12 +73,12 @@ const EXPERIENCES: ExperienceItem[] = [
     period: "2020 - 2021",
     type: "Self-Employed",
     description:
-      "Started programming journey building bespoke websites, interactive portfolios, and digital business tools while mastering JavaScript and backend fundamentals.",
+      "Started programming journey building bespoke websites, interactive portfolios, and digital business tools while mastering JavaScript, PHP, and backend fundamentals.",
     achievements: [
       "Built custom responsive landing pages and portals with fast load times and clean SEO practices.",
       "Adopted Git and GitHub collaborative workflows, code versioning, and CI/CD deployment on Vercel and Netlify.",
     ],
-    skills: ["JavaScript", "Responsive Design", "Git / GitHub", "UI/UX Basics"],
+    skills: ["JavaScript", "PHP", "Responsive Design", "Git / GitHub", "UI/UX Basics"],
   },
 ];
 
@@ -88,7 +101,7 @@ export default function ExperienceSection() {
           Work & Project Experience
         </h2>
         <p className="text-muted-foreground max-w-2xl mx-auto text-base sm:text-lg">
-          A track record of engineering scalable applications, reliable APIs, and intuitive user experiences.
+          A track record of engineering scalable applications, reliable APIs, intuitive user experiences, and high-impact knowledge platforms.
         </p>
       </div>
 

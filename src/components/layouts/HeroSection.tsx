@@ -1,15 +1,12 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
 import {
   Terminal,
-  CheckCircle2,
   FileText,
   Download,
   Phone,
-  Sparkles,
   MapPin,
   ExternalLink,
 } from "lucide-react";
@@ -71,9 +68,10 @@ export default function HeroSection() {
                     words={[
                       "Full Stack Developer",
                       "Frontend Engineer",
+                      "CMS & Knowledge Architect",
                       "React & Next.js Specialist",
                       "Node.js Backend Developer",
-                      "Software Engineer",
+                      "WordPress & MediaWiki Specialist",
                     ]}
                     typingSpeed={70}
                     deletingSpeed={35}
@@ -86,13 +84,13 @@ export default function HeroSection() {
             {/* Minimal Terminal Sub-badge */}
             <div className="flex items-center gap-2 text-xs font-mono text-muted-foreground/90 bg-muted/40 w-fit px-3 py-1.5 rounded-lg border border-border/40">
               <Terminal className="w-3.5 h-3.5 text-primary" />
-              <span>const passion = &quot;Engineering Scalable Digital Experiences&quot;;</span>
+              <span>const passion = &quot;Engineering Scalable Web & Knowledge Systems&quot;;</span>
             </div>
 
             <p className="text-base sm:text-lg text-muted-foreground font-normal leading-relaxed max-w-2xl pt-2">
               Passionate developer specializing in building high-performance,
               accessible web applications with <strong>Next.js</strong>, <strong>React 19</strong>, <strong>TypeScript</strong>, and <strong>Tailwind CSS</strong>,
-              backed by robust <strong>Node.js</strong> and <strong>PostgreSQL / MongoDB</strong> services.
+              alongside enterprise <strong>WordPress</strong> and <strong>MediaWiki</strong> knowledge architectures.
             </p>
           </div>
 
@@ -279,7 +277,7 @@ export default function HeroSection() {
                     <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
                   </span>
                   <span className="text-xs font-medium text-foreground">
-                    Full Stack Engineer
+                    Full Stack & CMS Engineer
                   </span>
                 </div>
               </div>
@@ -302,21 +300,21 @@ export default function HeroSection() {
 
                 <div className="grid grid-cols-3 gap-2 pt-2 text-center border-t border-border/40">
                   <div className="p-2 rounded-lg bg-muted/30">
-                    <p className="text-lg font-bold text-primary">3+</p>
+                    <p className="text-lg font-bold text-primary">7+</p>
                     <p className="text-[10px] text-muted-foreground uppercase font-mono">
-                      Production Projects
+                      Live Platforms
                     </p>
                   </div>
                   <div className="p-2 rounded-lg bg-muted/30">
                     <p className="text-lg font-bold text-blue-500">100%</p>
                     <p className="text-[10px] text-muted-foreground uppercase font-mono">
-                      Dedication
+                      Open Source
                     </p>
                   </div>
                   <div className="p-2 rounded-lg bg-muted/30">
                     <p className="text-lg font-bold text-purple-500">2020</p>
                     <p className="text-[10px] text-muted-foreground uppercase font-mono">
-                      Journey Start
+                      Since
                     </p>
                   </div>
                 </div>
