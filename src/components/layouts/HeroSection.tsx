@@ -252,6 +252,10 @@ export default function HeroSection() {
                 <img
                   src="/profile.jpg"
                   alt="Sourav Halder - Professional Full Stack Developer"
+                  width={400}
+                  height={400}
+                  fetchPriority="high"
+                  decoding="async"
                   className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 />
 
