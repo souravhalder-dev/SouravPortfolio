@@ -17,7 +17,7 @@ import { CiMail } from "react-icons/ci";
 
 export default function HeroSection() {
   const RESUME_VIEW_URL =
-    "https://drive.google.com/file/d/1mrI8fDyX6nRfZDkieumQoK/view";
+    "https://docs.google.com/document/d/1DZOXXybXawoGVuzB-R4VwRE13ZEexbbOMMFI8n6RXjA/edit?pli=1&tab=t.0";
   const RESUME_DOWNLOAD_PATH = "/Sourav_Halder_Resume.pdf";
 
   return (
@@ -79,13 +79,19 @@ export default function HeroSection() {
             {/* Minimal Terminal Sub-badge */}
             <div className="flex items-center gap-2 text-xs font-mono text-muted-foreground/90 bg-muted/40 w-fit px-3 py-1.5 rounded-lg border border-border/40">
               <Terminal className="w-3.5 h-3.5 text-primary" />
-              <span>const passion = &quot;Engineering Scalable Web & Knowledge Systems&quot;;</span>
+              <span>
+                const passion = &quot;Engineering Scalable Web & Knowledge
+                Systems&quot;;
+              </span>
             </div>
 
             <p className="text-base sm:text-lg text-muted-foreground font-normal leading-relaxed max-w-2xl pt-2">
               Passionate developer specializing in building high-performance,
-              accessible web applications with <strong>Next.js</strong>, <strong>React 19</strong>, <strong>TypeScript</strong>, and <strong>Tailwind CSS</strong>,
-              alongside enterprise <strong>WordPress</strong> and <strong>MediaWiki</strong> knowledge architectures.
+              accessible web applications with <strong>Next.js</strong>,{" "}
+              <strong>React 19</strong>, <strong>TypeScript</strong>, and{" "}
+              <strong>Tailwind CSS</strong>, alongside enterprise{" "}
+              <strong>WordPress</strong> and <strong>MediaWiki</strong>{" "}
+              knowledge architectures.
             </p>
           </div>
 
@@ -127,7 +133,9 @@ export default function HeroSection() {
               <div className="flex items-center gap-2.5">
                 <MapPin className="w-4 h-4 text-rose-500 shrink-0" />
                 <span className="text-muted-foreground">Location:</span>
-                <span className="text-foreground font-medium">Khulna, Bangladesh</span>
+                <span className="text-foreground font-medium">
+                  Khulna, Bangladesh
+                </span>
               </div>
             </div>
 
@@ -270,7 +278,10 @@ export default function HeroSection() {
                       @souravhalder-dev
                     </p>
                   </div>
-                  <Badge variant="outline" className="border-primary/30 text-primary text-xs">
+                  <Badge
+                    variant="outline"
+                    className="border-primary/30 text-primary text-xs"
+                  >
                     Verified Dev
                   </Badge>
                 </div>
