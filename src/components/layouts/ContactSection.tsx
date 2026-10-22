@@ -67,23 +67,58 @@ export default function ContactSection() {
     const toastId = toast.loading("Sending message to skhsouravhalder@gmail.com...");
 
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      let delivered = false;
 
-      const result = await response.json();
+      // 1. Direct browser dispatch to FormSubmit
+      try {
+        const directRes = await fetch("https://formsubmit.co/ajax/skhsouravhalder@gmail.com", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            _replyto: formData.email,
+            subject: formData.subject || `New Portfolio Message from ${formData.name}`,
+            message: formData.message,
+            _subject: `[Portfolio Inquiry] ${formData.subject || `From ${formData.name}`}`,
+            _template: "table",
+          }),
+        });
 
-      if (response.ok && result.success) {
+        const directData = await directRes.json();
+        if (directRes.ok && (directData.success === "true" || directData.success === true)) {
+          delivered = true;
+        }
+      } catch (clientErr) {
+        console.warn("Client direct dispatch failed, trying server API route...", clientErr);
+      }
+
+      // 2. Fallback to Next.js API route
+      if (!delivered) {
+        const response = await fetch("/api/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
+
+        const result = await response.json();
+        if (response.ok && result.success) {
+          delivered = true;
+        }
+      }
+
+      if (delivered) {
         toast.success("Message delivered successfully to skhsouravhalder@gmail.com!", {
           id: toastId,
         });
         setIsSubmitted(true);
       } else {
-        // Fallback to mailto link if API fails
+        // 3. Fallback to user mail client
         const subject = encodeURIComponent(formData.subject || `Inquiry from ${formData.name}`);
         const body = encodeURIComponent(
           `Hello Sourav,\n\nName: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}\n`

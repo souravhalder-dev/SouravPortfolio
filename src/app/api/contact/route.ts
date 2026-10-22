@@ -12,7 +12,6 @@ export async function POST(request: Request) {
       );
     }
 
-    // Email validation regex
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       return NextResponse.json(
@@ -24,12 +23,13 @@ export async function POST(request: Request) {
     const recipient = "skhsouravhalder@gmail.com";
     const formattedSubject = subject?.trim() || `New Portfolio Inquiry from ${name}`;
 
-    // Dispatch directly to skhsouravhalder@gmail.com via FormSubmit
     const formSubmitResponse = await fetch(`https://formsubmit.co/ajax/${recipient}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
+        "User-Agent":
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
         Referer: "https://sourav-halder-portfolio.vercel.app",
         Origin: "https://sourav-halder-portfolio.vercel.app",
       },
@@ -45,7 +45,13 @@ export async function POST(request: Request) {
       }),
     });
 
-    const data = await formSubmitResponse.json();
+    const responseText = await formSubmitResponse.text();
+    let data;
+    try {
+      data = JSON.parse(responseText);
+    } catch {
+      data = { message: responseText };
+    }
 
     return NextResponse.json({
       success: true,
