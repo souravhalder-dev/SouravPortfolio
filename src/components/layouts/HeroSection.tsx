@@ -11,13 +11,8 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { TypingEffect } from "./TypingEffect";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaWhatsapp,
-  FaFacebook,
-  FaTwitter,
-} from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { CiMail } from "react-icons/ci";
 
 export default function HeroSection() {
@@ -28,7 +23,7 @@ export default function HeroSection() {
   return (
     <section
       id="intro"
-      className="container max-w-7xl mx-auto px-4 pt-24 pb-16 md:pt-32 md:pb-24 min-h-[90vh] flex items-center relative overflow-hidden"
+      className="container max-w-7xl mx-auto px-4 pt-28 pb-16 md:pt-36 md:pb-24 min-h-[90vh] flex items-center relative overflow-hidden"
     >
       {/* Background Ambient Glows */}
       <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
@@ -132,7 +127,7 @@ export default function HeroSection() {
               <div className="flex items-center gap-2.5">
                 <MapPin className="w-4 h-4 text-rose-500 shrink-0" />
                 <span className="text-muted-foreground">Location:</span>
-                <span className="text-foreground font-medium">Dhaka, Bangladesh</span>
+                <span className="text-foreground font-medium">Khulna, Bangladesh</span>
               </div>
             </div>
 
@@ -182,34 +177,16 @@ export default function HeroSection() {
                 asChild
                 variant="outline"
                 size="sm"
-                className="gap-2 cursor-pointer transition-all duration-300 hover:-translate-y-0.5 rounded-lg border-border/60 hover:border-sky-500/40 hover:bg-sky-500/5"
+                className="gap-2 cursor-pointer transition-all duration-300 hover:-translate-y-0.5 rounded-lg border-border/60 hover:border-foreground/30 hover:bg-foreground/5"
               >
                 <Link
-                  href="https://twitter.com/souravhalder_dev"
+                  href="https://x.com/souravhdev"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Twitter Profile"
+                  aria-label="X Profile"
                 >
-                  <FaTwitter className="w-4 h-4 text-sky-500" />
-                  <span className="text-xs">Twitter</span>
-                </Link>
-              </Button>
-
-              {/* Facebook */}
-              <Button
-                asChild
-                variant="outline"
-                size="sm"
-                className="gap-2 cursor-pointer transition-all duration-300 hover:-translate-y-0.5 rounded-lg border-border/60 hover:border-blue-600/40 hover:bg-blue-600/5"
-              >
-                <Link
-                  href="https://facebook.com/souravhalder.dev"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Facebook Profile"
-                >
-                  <FaFacebook className="w-4 h-4 text-blue-600" />
-                  <span className="text-xs">Facebook</span>
+                  <FaXTwitter className="w-4 h-4 text-foreground" />
+                  <span className="text-xs">X (Twitter)</span>
                 </Link>
               </Button>
             </div>
@@ -308,13 +285,13 @@ export default function HeroSection() {
                   <div className="p-2 rounded-lg bg-muted/30">
                     <p className="text-lg font-bold text-blue-500">100%</p>
                     <p className="text-[10px] text-muted-foreground uppercase font-mono">
-                      Open Source
+                      Dedication
                     </p>
                   </div>
                   <div className="p-2 rounded-lg bg-muted/30">
-                    <p className="text-lg font-bold text-purple-500">2020</p>
+                    <p className="text-lg font-bold text-purple-500">Khulna</p>
                     <p className="text-[10px] text-muted-foreground uppercase font-mono">
-                      Since
+                      Bangladesh
                     </p>
                   </div>
                 </div>

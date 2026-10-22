@@ -1,7 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import { Mail } from "lucide-react";
-import { FaGithub, FaLinkedin, FaWhatsapp, FaFacebook, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -25,7 +26,7 @@ export default function Footer() {
 
         {/* COPYRIGHT & METRICS */}
         <p className="text-xs font-mono text-muted-foreground text-center md:text-left order-last md:order-none">
-          &copy; {currentYear} Sourav Halder &bull; Built with Next.js & Tailwind CSS. All rights reserved.
+          &copy; {currentYear} Sourav Halder &bull; Khulna, Bangladesh &bull; Built with Next.js & Tailwind CSS.
         </p>
 
         {/* SOCIAL LINKS */}
@@ -49,22 +50,13 @@ export default function Footer() {
             <FaLinkedin className="w-4 h-4" />
           </Link>
           <Link
-            href="https://twitter.com/souravhalder_dev"
+            href="https://x.com/souravhdev"
             target="_blank"
             rel="noreferrer"
-            className="p-2 rounded-lg border border-border/60 bg-muted/20 text-muted-foreground hover:text-sky-500 hover:border-sky-500/30 hover:bg-sky-500/10 transition-all duration-200"
-            aria-label="Twitter Profile"
+            className="p-2 rounded-lg border border-border/60 bg-muted/20 text-muted-foreground hover:text-foreground hover:border-border hover:bg-muted/50 transition-all duration-200"
+            aria-label="X Profile"
           >
-            <FaTwitter className="w-4 h-4" />
-          </Link>
-          <Link
-            href="https://facebook.com/souravhalder.dev"
-            target="_blank"
-            rel="noreferrer"
-            className="p-2 rounded-lg border border-border/60 bg-muted/20 text-muted-foreground hover:text-blue-600 hover:border-blue-600/30 hover:bg-blue-600/10 transition-all duration-200"
-            aria-label="Facebook Profile"
-          >
-            <FaFacebook className="w-4 h-4" />
+            <FaXTwitter className="w-4 h-4" />
           </Link>
           <Link
             href="https://wa.me/8801519603043"

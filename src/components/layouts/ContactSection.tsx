@@ -8,7 +8,6 @@ import {
   Phone,
   Send,
   MessageSquare,
-  CheckCircle2,
   MapPin,
   Clock,
 } from "lucide-react";
@@ -32,14 +31,28 @@ export default function ContactSection() {
     }
 
     setIsSubmitting(true);
-    // Simulate instant seamless message receipt
+
+    const emailSubject = encodeURIComponent(
+      formData.subject || `Inquiry from ${formData.name} via Portfolio`
+    );
+    const emailBody = encodeURIComponent(
+      `Hi Sourav,\n\nName: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}\n`
+    );
+
+    // Direct mailto link targeted to skhsouravhalder@gmail.com
+    const mailtoUrl = `mailto:skhsouravhalder@gmail.com?subject=${emailSubject}&body=${emailBody}`;
+
+    // Open mail client to send directly to skhsouravhalder@gmail.com
+    window.location.href = mailtoUrl;
+
+    toast.success(
+      "Opening your email client to send message directly to skhsouravhalder@gmail.com!"
+    );
+
     setTimeout(() => {
-      toast.success(
-        "Thank you! Your message has been sent. Sourav will respond promptly."
-      );
       setFormData({ name: "", email: "", subject: "", message: "" });
       setIsSubmitting(false);
-    }, 600);
+    }, 1000);
   };
 
   return (
@@ -87,7 +100,7 @@ export default function ContactSection() {
                   skhsouravhalder@gmail.com
                 </a>
                 <p className="text-xs text-muted-foreground">
-                  Expected response within 12 hours
+                  Direct inquiries dispatched to skhsouravhalder@gmail.com
                 </p>
               </div>
             </div>
@@ -145,7 +158,7 @@ export default function ContactSection() {
           <div className="bg-muted/20 p-4 rounded-xl border border-border/40 font-mono text-xs text-muted-foreground space-y-1.5">
             <div className="flex items-center gap-2">
               <MapPin className="w-3.5 h-3.5 text-rose-500" />
-              <span>Location: Dhaka, Bangladesh</span>
+              <span>Location: Khulna, Bangladesh</span>
             </div>
             <div className="flex items-center gap-2">
               <Clock className="w-3.5 h-3.5 text-primary" />
@@ -161,7 +174,8 @@ export default function ContactSection() {
               Send a Direct Message
             </h3>
             <p className="text-sm text-muted-foreground">
-              Fill in your details below and I will get back to you promptly.
+              Fill in your details below and your message will be delivered directly to{" "}
+              <strong className="text-foreground">skhsouravhalder@gmail.com</strong>.
             </p>
           </div>
 
@@ -238,7 +252,7 @@ export default function ContactSection() {
                 className="w-full sm:w-auto h-11 px-8 gap-2 rounded-xl shadow-lg shadow-primary/20 hover:shadow-primary/30"
               >
                 <Send className="w-4 h-4" />
-                <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
+                <span>{isSubmitting ? "Dispatching..." : "Send to skhsouravhalder@gmail.com"}</span>
               </Button>
 
               <Button

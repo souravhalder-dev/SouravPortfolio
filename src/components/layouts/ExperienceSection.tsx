@@ -17,7 +17,7 @@ const EXPERIENCES: ExperienceItem[] = [
   {
     role: "Full Stack Software Developer",
     company: "Freelance & Open Source Projects",
-    location: "Remote / Dhaka, Bangladesh",
+    location: "Remote / Khulna, Bangladesh",
     period: "2023 - Present",
     type: "Contract / Project-Based",
     description:
@@ -44,7 +44,7 @@ const EXPERIENCES: ExperienceItem[] = [
   {
     role: "Frontend Engineer & CMS Specialist",
     company: "Client & Web Solutions",
-    location: "Remote",
+    location: "Remote / Khulna, Bangladesh",
     period: "2021 - 2023",
     type: "Freelance",
     description:
@@ -69,7 +69,7 @@ const EXPERIENCES: ExperienceItem[] = [
   {
     role: "Web Developer & Interface Designer",
     company: "Independent Practice",
-    location: "Dhaka, Bangladesh",
+    location: "Khulna, Bangladesh",
     period: "2020 - 2021",
     type: "Self-Employed",
     description:

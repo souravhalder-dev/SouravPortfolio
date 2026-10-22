@@ -1,14 +1,12 @@
 import React from "react";
 import {
   Terminal,
-  Sparkles,
   Clock,
-  Heart,
   GraduationCap,
   Code,
   Compass,
   Trophy,
-  Coffee,
+  BookOpen,
 } from "lucide-react";
 
 export default function AboutSection() {
@@ -37,14 +35,6 @@ export default function AboutSection() {
 
       {/* BIOGRAPHY CONTENT */}
       <div className="relative p-8 sm:p-12 rounded-3xl border border-border/60 bg-card/40 backdrop-blur-xl shadow-xl overflow-hidden z-10 space-y-10">
-        {/* Decorative Elements */}
-        <div className="absolute top-6 left-6 text-primary/20">
-          <Sparkles className="w-8 h-8" />
-        </div>
-        <div className="absolute bottom-6 right-6 text-primary/20 rotate-180">
-          <Sparkles className="w-8 h-8" />
-        </div>
-
         {/* Narrative Blocks */}
         <div className="relative z-10 space-y-6 text-muted-foreground text-base sm:text-lg leading-relaxed">
           <div className="flex items-start gap-4">
@@ -56,7 +46,7 @@ export default function AboutSection() {
                 My Programming Journey
               </h3>
               <p>
-                My journey into programming began in <strong>2020</strong>, driven by deep curiosity to understand how software brings complex ideas to life. What started as late-night experimentation with algorithms and frontend layouts quickly evolved into building full-fledged, scalable web applications with modern technology stacks like <strong>React</strong>, <strong>Next.js</strong>, <strong>Node.js</strong>, and <strong>TypeScript</strong>.
+                My journey into software engineering began in <strong>2020</strong> in Khulna, Bangladesh. To ground my practical curiosity in rigorous software fundamentals, I joined <strong>Programming Hero</strong>, where I mastered full-stack web development, computer science concepts, algorithms, and modern frontend & backend architectures.
               </p>
             </div>
           </div>
@@ -70,7 +60,7 @@ export default function AboutSection() {
                 The Work I Enjoy
               </h3>
               <p>
-                I thrive on architecting clean, responsive user interfaces and pair them with rock-solid server-side systems. Whether implementing double-entry financial ledgers, optimizing database queries with Prisma and PostgreSQL, or building zero-friction authenticated flows, I take immense pride in writing clean, maintainable, and type-safe code that delivers exceptional end-user value.
+                I thrive on architecting clean, responsive user interfaces paired with rock-solid server-side systems. Whether implementing double-entry financial ledgers, optimizing database queries with Prisma and PostgreSQL, customizing high-volume WordPress portals, or configuring MediaWiki knowledge architectures, I take immense pride in writing clean, maintainable, and type-safe code that delivers exceptional end-user value.
               </p>
             </div>
           </div>
@@ -90,7 +80,7 @@ export default function AboutSection() {
           </div>
         </div>
 
-        {/* EDUCATIONAL QUALIFICATION SECTION */}
+        {/* EDUCATIONAL & ACADEMY QUALIFICATION SECTION */}
         <div className="mt-10 pt-8 border-t border-border/50">
           <div className="flex items-center gap-3 mb-6">
             <div className="p-2.5 rounded-xl bg-primary/10 text-primary">
@@ -98,58 +88,56 @@ export default function AboutSection() {
             </div>
             <div>
               <h3 className="text-2xl font-bold text-foreground">
-                Educational Qualification
+                Education & Technical Academy
               </h3>
               <p className="text-sm text-muted-foreground">
-                Higher academic background and management discipline
+                Higher academic degree and computer science training
               </p>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-muted/30 p-6 rounded-2xl border border-border/50 hover:border-primary/30 transition-all space-y-2">
+            {/* Programming Hero Academy */}
+            <div className="bg-muted/30 p-6 rounded-2xl border border-border/50 hover:border-primary/40 transition-all space-y-2 group">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-mono uppercase tracking-wider text-primary bg-primary/10 px-2.5 py-1 rounded-md">
+                <span className="text-xs font-mono uppercase tracking-wider text-primary bg-primary/10 px-2.5 py-1 rounded-md font-semibold">
+                  Computer Science & Web Academy
+                </span>
+                <span className="text-xs font-mono text-muted-foreground">
+                  Alumnus
+                </span>
+              </div>
+              <h4 className="text-lg font-bold text-foreground pt-1 flex items-center gap-2">
+                <BookOpen className="w-5 h-5 text-primary" />
+                Programming Hero
+              </h4>
+              <p className="text-sm font-semibold text-primary">
+                Complete Web Development & Computer Science Program
+              </p>
+              <p className="text-xs text-muted-foreground/90 pt-1 leading-relaxed">
+                Intensive computer science training covering data structures, algorithms, object-oriented programming, modern JavaScript/TypeScript, React, Next.js, Node.js, Express, MongoDB, and production project deployment.
+              </p>
+            </div>
+
+            {/* University Degree */}
+            <div className="bg-muted/30 p-6 rounded-2xl border border-border/50 hover:border-blue-500/40 transition-all space-y-2 group">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-mono uppercase tracking-wider text-blue-500 bg-blue-500/10 px-2.5 py-1 rounded-md font-semibold">
                   Undergraduate Degree
                 </span>
                 <span className="text-xs font-mono text-muted-foreground">
                   Graduated
                 </span>
               </div>
-              <h4 className="text-lg font-bold text-foreground pt-1">
+              <h4 className="text-lg font-bold text-foreground pt-1 flex items-center gap-2">
+                <GraduationCap className="w-5 h-5 text-blue-500" />
                 Bachelor of Business Administration (BBA)
               </h4>
-              <p className="text-sm font-medium text-foreground/80">
-                Major in Management
+              <p className="text-sm font-semibold text-foreground/85">
+                Major in Management &bull; National University, Bangladesh
               </p>
-              <p className="text-sm text-muted-foreground">
-                National University, Bangladesh
-              </p>
-              <p className="text-xs text-muted-foreground/90 pt-2 leading-relaxed">
-                Comprehensive study in organizational leadership, strategic decision-making, operations, and business management—bridging technology and business requirements.
-              </p>
-            </div>
-
-            <div className="bg-muted/30 p-6 rounded-2xl border border-border/50 hover:border-blue-500/30 transition-all space-y-2">
-              <div className="flex items-center justify-between">
-                <span className="text-xs font-mono uppercase tracking-wider text-blue-500 bg-blue-500/10 px-2.5 py-1 rounded-md">
-                  Continuous Professional Learning
-                </span>
-                <span className="text-xs font-mono text-muted-foreground">
-                  Ongoing
-                </span>
-              </div>
-              <h4 className="text-lg font-bold text-foreground pt-1">
-                Full Stack & Software Engineering Specialization
-              </h4>
-              <p className="text-sm font-medium text-foreground/80">
-                Modern Web Architectures & Systems
-              </p>
-              <p className="text-sm text-muted-foreground">
-                Self-Taught & Advanced Technical Programs
-              </p>
-              <p className="text-xs text-muted-foreground/90 pt-2 leading-relaxed">
-                Hands-on mastery of Next.js App Router, TypeScript, React 19, Node.js, Express, PostgreSQL, Prisma ORM, MongoDB, Docker, and RESTful API architecture.
+              <p className="text-xs text-muted-foreground/90 pt-1 leading-relaxed">
+                Comprehensive academic education in organizational leadership, strategic decision-making, operations, and business management—bridging technology and business requirements.
               </p>
             </div>
           </div>
