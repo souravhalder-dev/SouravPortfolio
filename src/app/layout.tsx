@@ -15,8 +15,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sourav's Portfolio",
-  description: "Sourav's Professional Portfolio - Full Stack Developer",
+  title: "Sourav Halder | Full Stack Developer & Software Engineer",
+  description:
+    "Professional portfolio of Sourav Halder - Full Stack Developer specializing in Next.js, React, Node.js, TypeScript, PostgreSQL, and scalable web architectures.",
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
 };
 
 export default function RootLayout({

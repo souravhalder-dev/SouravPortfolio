@@ -1,26 +1,29 @@
-import Link from "next/link";
 import ProjectSection from "@/components/layouts/ProjectSection";
 import HeroSection from "@/components/layouts/HeroSection";
 import AboutSection from "@/components/layouts/AboutSection";
 import SkillsSection from "@/components/layouts/SkillsSection";
+import ExperienceSection from "@/components/layouts/ExperienceSection";
 import ContactSection from "@/components/layouts/ContactSection";
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-background text-foreground antialiased selection:bg-primary/20">
-      {/* HERO SECTION */}
+      {/* 1. HERO SECTION */}
       <HeroSection />
 
-      {/* FEATURED PROJECTS SECTION */}
+      {/* 2. FEATURED PROJECTS SECTION */}
       <ProjectSection />
 
-      {/* SKILLS MATRIX SECTION */}
+      {/* 3. SKILLS MATRIX SECTION */}
       <SkillsSection />
 
-      {/* ABOUT SECTION */}
+      {/* 4. PROFESSIONAL EXPERIENCE SECTION */}
+      <ExperienceSection />
+
+      {/* 5. ABOUT & EDUCATION SECTION */}
       <AboutSection />
 
-      {/* CONTACT CTA SECTION */}
+      {/* 6. CONTACT CTA SECTION */}
       <ContactSection />
     </div>
   );

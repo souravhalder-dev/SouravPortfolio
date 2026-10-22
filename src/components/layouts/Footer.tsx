@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import { Terminal, Mail } from "lucide-react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { Mail } from "lucide-react";
+import { FaGithub, FaLinkedin, FaWhatsapp, FaFacebook, FaTwitter } from "react-icons/fa";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -9,29 +9,32 @@ export default function Footer() {
   return (
     <footer className="border-t border-border/40 bg-background relative overflow-hidden">
       {/* Subtle bottom decorative accent glow line */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-px bg-linear-to-r from-transparent via-primary/20 to-transparent" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-px bg-linear-to-r from-transparent via-primary/30 to-transparent" />
 
-      <div className="container max-w-7xl mx-auto px-4 py-12 flex flex-col sm:flex-row items-center justify-between gap-6 relative z-10">
-        {/* LOGO / BRAND MARK */}
-        <div className="flex items-center gap-2 font-mono text-sm tracking-tight text-foreground/90 group">
-          <Terminal className="w-4 h-4 text-primary transition-transform duration-300 group-hover:rotate-6" />
-          <span className="font-bold">Sourav</span>
-          <span className="text-muted-foreground">.portfolio</span>
-        </div>
+      <div className="container max-w-7xl mx-auto px-4 py-12 flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">
+        {/* LOGO / BRAND MARK WITH 'S' */}
+        <Link href="/" className="flex items-center gap-2.5 group">
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-blue-600 via-primary to-purple-600 flex items-center justify-center text-white font-black text-base shadow-sm border border-white/20 group-hover:scale-105 transition-transform duration-300">
+            S
+          </div>
+          <div className="font-mono text-sm tracking-tight text-foreground/90">
+            <span className="font-bold">Sourav</span>
+            <span className="text-primary font-semibold">.dev</span>
+          </div>
+        </Link>
 
         {/* COPYRIGHT & METRICS */}
-        <p className="text-xs font-mono text-muted-foreground text-center sm:text-left order-last sm:order-0">
-          &copy; {currentYear} &bull; Built with Next.js & Tailwind CSS. All
-          rights reserved.
+        <p className="text-xs font-mono text-muted-foreground text-center md:text-left order-last md:order-none">
+          &copy; {currentYear} Sourav Halder &bull; Built with Next.js & Tailwind CSS. All rights reserved.
         </p>
 
-        {/* SOCIAL LINKS ARCHITECTURE */}
-        <div className="flex items-center gap-4">
+        {/* SOCIAL LINKS */}
+        <div className="flex items-center gap-2.5">
           <Link
             href="https://github.com/souravhalder-dev"
             target="_blank"
             rel="noreferrer"
-            className="p-2 rounded-md border border-border/60 bg-muted/20 text-muted-foreground hover:text-foreground hover:border-border hover:bg-muted/50 transition-all duration-200"
+            className="p-2 rounded-lg border border-border/60 bg-muted/20 text-muted-foreground hover:text-foreground hover:border-border hover:bg-muted/50 transition-all duration-200"
             aria-label="GitHub Profile"
           >
             <FaGithub className="w-4 h-4" />
@@ -40,14 +43,41 @@ export default function Footer() {
             href="https://www.linkedin.com/in/sourav-halder-dev/"
             target="_blank"
             rel="noreferrer"
-            className="p-2 rounded-md border border-border/60 bg-muted/20 text-muted-foreground hover:text-primary hover:border-primary/20 hover:bg-primary/5 transition-all duration-200"
+            className="p-2 rounded-lg border border-border/60 bg-muted/20 text-muted-foreground hover:text-[#0A66C2] hover:border-[#0A66C2]/30 hover:bg-[#0A66C2]/10 transition-all duration-200"
             aria-label="LinkedIn Profile"
           >
             <FaLinkedin className="w-4 h-4" />
           </Link>
           <Link
+            href="https://twitter.com/souravhalder_dev"
+            target="_blank"
+            rel="noreferrer"
+            className="p-2 rounded-lg border border-border/60 bg-muted/20 text-muted-foreground hover:text-sky-500 hover:border-sky-500/30 hover:bg-sky-500/10 transition-all duration-200"
+            aria-label="Twitter Profile"
+          >
+            <FaTwitter className="w-4 h-4" />
+          </Link>
+          <Link
+            href="https://facebook.com/souravhalder.dev"
+            target="_blank"
+            rel="noreferrer"
+            className="p-2 rounded-lg border border-border/60 bg-muted/20 text-muted-foreground hover:text-blue-600 hover:border-blue-600/30 hover:bg-blue-600/10 transition-all duration-200"
+            aria-label="Facebook Profile"
+          >
+            <FaFacebook className="w-4 h-4" />
+          </Link>
+          <Link
+            href="https://wa.me/8801519603043"
+            target="_blank"
+            rel="noreferrer"
+            className="p-2 rounded-lg border border-border/60 bg-muted/20 text-muted-foreground hover:text-emerald-500 hover:border-emerald-500/30 hover:bg-emerald-500/10 transition-all duration-200"
+            aria-label="WhatsApp Contact"
+          >
+            <FaWhatsapp className="w-4 h-4" />
+          </Link>
+          <Link
             href="mailto:skhsouravhalder@gmail.com"
-            className="p-2 rounded-md border border-border/60 bg-muted/20 text-muted-foreground hover:text-emerald-400 hover:border-emerald-500/20 hover:bg-emerald-500/5 transition-all duration-200"
+            className="p-2 rounded-lg border border-border/60 bg-muted/20 text-muted-foreground hover:text-primary hover:border-primary/30 hover:bg-primary/10 transition-all duration-200"
             aria-label="Email Contact"
           >
             <Mail className="w-4 h-4" />
